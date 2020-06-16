@@ -6,11 +6,12 @@
   "engine": {
     "node": "12.16.1",
     "npm": "6.13.4"
-
   },
   "scripts": {
     "start": "node server/index.js",
-    "backend": "nodemon server/index.js"
+    "backend": "nodemon server/index.js",
+    "frontend": "npm run start --prefix client",
+    "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\""
   },
   "author": "Oxana Ermolenko",
   "license": "ISC",
@@ -20,9 +21,12 @@
     "cookie-parser": "^1.4.5",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.4.20"
+    "mongoose": "^5.4.20",
+    "react-redux": "^7.2.0",
+    "socket.io": "^2.3.0"
   },
   "devDependencies": {
+    "concurrently": "^5.2.0",
     "nodemon": "^2.0.4"
   }
 }
